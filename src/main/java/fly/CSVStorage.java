@@ -11,8 +11,8 @@ import java.util.List;
 public class CSVStorage implements Storage {
 
     private File planeFile;
-    private File AirportsFile;
-    private  File flyFile;
+    private File airportsFile;
+    private File flyFile;
 
     @Override
     public void addPlane(Plane plane) throws Exception {
@@ -29,8 +29,9 @@ public class CSVStorage implements Storage {
         String line;
         do {
             line = reader.readLine();
-            if (line != null){
+            if (line != null) {
                 Plane plane = csvToPlane(line);
+                planes.add(plane);
             }
         } while (line != null);
         return planes;
@@ -38,12 +39,25 @@ public class CSVStorage implements Storage {
 
     @Override
     public void addAirport(Airports airport) throws Exception {
-
+    FileWriter fileWriter = new FileWriter(airportsFile);
+    fileWriter.write(airportsToCSV(airport));
+    fileWriter.close();
     }
 
     @Override
     public List<Airports> getAllAirports() throws Exception {
-        return null;
+        List<Airports> airport = new ArrayList<>();
+        FileReader fileReader = new FileReader(airportsFile);
+        BufferedReader reader = new BufferedReader(fileReader);
+        String line;
+        do {
+            line = reader.readLine();
+            if (line != null) {
+                Airports airports = csvToAirports(line);
+                airport.add(airports);
+            }
+        }while (line != null);
+        return airport;
     }
 
     @Override
