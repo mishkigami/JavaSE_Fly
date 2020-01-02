@@ -20,6 +20,10 @@ public class Fly {
         Time_Arrival = time_Arrival;
     }
 
+    public Fly() {
+
+    }
+
     public int getIDfly() {
         return IDfly;
     }

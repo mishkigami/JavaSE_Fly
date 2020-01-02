@@ -1,5 +1,6 @@
 package fly;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class CSVStorage implements Storage {
@@ -65,5 +66,29 @@ public class CSVStorage implements Storage {
         airports.setIDairports(Integer.parseInt(fields[0]));
         airports.setNameAirports(fields[1]);
         return airports;
+    }
+
+    private String flyToCSV (Fly fly) {
+        StringBuilder sb =new StringBuilder();
+        sb.append(fly.getIDfly()).append(';')
+                .append(fly.getIDPlane()).append(';')
+                .append(fly.getIDAirport_Departure()).append(';')
+                .append(fly.getIDAirport_Arrival()).append(';')
+                .append(fly.getTime_Departure()).append(';')
+                .append(fly.getTime_Arrival()).append(';');
+        return sb.toString();
+    }
+
+    private Fly csvToFly (String line) {
+        Fly fly = new Fly();
+
+        String[] fields = line.split(";");
+        fly.setIDfly(Integer.parseInt(fields[0]));
+        fly.setIDPlane(Integer.parseInt(fields[1]));
+        fly.setIDAirport_Departure(Integer.parseInt(fields[2]));
+        fly.setIDAirport_Arrival(Integer.parseInt(fields[3]));
+        fly.setTime_Departure(LocalDateTime.parse(fields[4]));
+        fly.setTime_Arrival(LocalDateTime.parse(fields[5]));
+        return fly;
     }
 }
