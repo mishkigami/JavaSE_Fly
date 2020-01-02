@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0aed8c41-da1d-4bec-8939-67233e4c5ce2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fly/utils/ConfiqUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fly/CSVStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fly/CSVStorage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +34,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Михаил\IdeaProjects\JavaSE_Project_Fly\src\main\resources" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
