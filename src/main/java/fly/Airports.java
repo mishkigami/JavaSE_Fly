@@ -10,6 +10,10 @@ public class Airports {
         this.nameAirports = nameAirports;
     }
 
+    public Airports() {
+
+    }
+
     public int getIDairports() {
         return IDairports;
     }

@@ -50,4 +50,20 @@ public class CSVStorage implements Storage {
         plane.setSeats(Integer.parseInt(fields[2]));
         return plane;
     }
+
+    private String airportsToCSV (Airports airports) {
+        StringBuilder sb =new StringBuilder();
+        sb.append(airports.getIDairports()).append(';')
+                .append(airports.getNameAirports()).append(';');
+        return sb.toString();
+    }
+
+    private Airports csvToAirports (String line) {
+        Airports airports = new Airports();
+
+        String[] fields = line.split(";");
+        airports.setIDairports(Integer.parseInt(fields[0]));
+        airports.setNameAirports(fields[1]);
+        return airports;
+    }
 }
