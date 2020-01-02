@@ -1,5 +1,7 @@
 package fly;
 
+import fly.utils.ConfiqUtils;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -13,6 +15,12 @@ public class CSVStorage implements Storage {
     private File planeFile;
     private File airportsFile;
     private File flyFile;
+
+    public CSVStorage() {
+        planeFile = new File(ConfiqUtils.getProporties("planeFileName"));
+        airportsFile = new File(ConfiqUtils.getProporties("airportsFilename"));
+        flyFile = new File(ConfiqUtils.getProporties("flyFileName"));
+    }
 
 
     @Override
