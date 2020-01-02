@@ -40,4 +40,14 @@ public class CSVStorage implements Storage {
             .append(plane.getSeats()).append(';');
     return sb.toString();
     }
+
+    private Plane csvToPlane (String line) {
+        Plane plane = new Plane();
+
+        String[] fields = line.split(";");
+        plane.setIDPlane(Integer.parseInt(fields[0]));
+        plane.setNamePlane(fields[1]);
+        plane.setSeats(Integer.parseInt(fields[2]));
+        return plane;
+    }
 }
