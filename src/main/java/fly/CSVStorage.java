@@ -1,17 +1,39 @@
 package fly;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CSVStorage implements Storage {
+
+    private File planeFile;
+    private File AirportsFile;
+    private  File flyFile;
+
     @Override
     public void addPlane(Plane plane) throws Exception {
-
+        FileWriter fileWriter = new FileWriter(planeFile,true);
+        fileWriter.write(planeToCSV(plane));
+        fileWriter.close();
     }
 
     @Override
     public List<Plane> getAllPlanes() throws Exception {
-        return null;
+        List<Plane> planes = new ArrayList<>();
+        FileReader fileReader = new FileReader(planeFile);
+        BufferedReader reader = new BufferedReader(fileReader);
+        String line;
+        do {
+            line = reader.readLine();
+            if (line != null){
+                Plane plane = csvToPlane(line);
+            }
+        } while (line != null);
+        return planes;
     }
 
     @Override
