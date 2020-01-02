@@ -62,12 +62,25 @@ public class CSVStorage implements Storage {
 
     @Override
     public void addFly(Fly fly) throws Exception {
-
+    FileWriter fileWriter = new FileWriter(flyFile);
+    fileWriter.write(flyToCSV(fly));
+    fileWriter.close();
     }
 
     @Override
     public List<Fly> getAllFly() throws Exception {
-        return null;
+        List<Fly> fly = new ArrayList<>();
+        FileReader fileReader = new FileReader(flyFile);
+        BufferedReader reader = new BufferedReader(fileReader);
+        String line;
+        do {
+            line = reader.readLine();
+            if (line != null) {
+                Fly flys = csvToFly(line);
+                fly.add(flys);
+            }
+        }while (line != null);
+        return fly;
     }
 
     private String planeToCSV (Plane plane) {
