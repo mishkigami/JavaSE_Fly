@@ -12,6 +12,10 @@ public class Plane {
         this.seats = seats;
     }
 
+    public Plane() {
+        
+    }
+
     public int getIDPlane() {
         return IDPlane;
     }
