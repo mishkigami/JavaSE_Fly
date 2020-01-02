@@ -14,6 +14,7 @@ public class CSVStorage implements Storage {
     private File airportsFile;
     private File flyFile;
 
+
     @Override
     public void addPlane(Plane plane) throws Exception {
         FileWriter fileWriter = new FileWriter(planeFile,true);
