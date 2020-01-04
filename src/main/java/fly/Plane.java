@@ -44,4 +44,13 @@ public class Plane {
     public void setSeats(int seats) {
         this.seats = seats;
     }
+
+    @Override
+    public String toString() {
+        return "Plane{" +
+                "ID=" + IDPlane +
+                ", name='" + namePlane + '\'' +
+                ", seats=" + seats +
+                '}';
+    }
 }
