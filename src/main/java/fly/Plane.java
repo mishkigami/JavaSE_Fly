@@ -12,6 +12,11 @@ public class Plane {
         this.seats = seats;
     }
 
+    public Plane(String namePlane, int seats) {
+        this.namePlane = namePlane;
+        this.seats = seats;
+    }
+
     public Plane() {
 
     }

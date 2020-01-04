@@ -7,11 +7,11 @@ public class Program {
     public static void main (String [] args) throws Exception {
         Storage storage = new DBStorage();
 
-        storage.addPlane(new Plane(1,"TY134",13));
-        storage.addAirport(new Airports(2,"Pulkovo"));
-        storage.addFly(new Fly(3, 4, 23, 1,
-                LocalDateTime.of(2020, 12, 31,12,43),
-                LocalDateTime.of(2021,1,1,8,10)));
+        storage.addPlane(new Plane("TY400",1200));
+//        storage.addAirport(new Airports(2,"Pulkovo"));
+//        storage.addFly(new Fly(3, 4, 23, 1,
+//                LocalDateTime.of(2020, 12, 31,12,43),
+//                LocalDateTime.of(2021,1,1,8,10)));
 
         List<Plane> planes = storage.getAllPlanes();
         List<Airports> airports = storage.getAllAirports();
