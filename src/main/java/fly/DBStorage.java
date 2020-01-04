@@ -1,6 +1,7 @@
 package fly;
 
 import fly.exceptions.DatabaseException;
+import fly.utils.ConfiqUtils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +10,9 @@ import java.util.List;
 
 public class DBStorage implements Storage {
 
+
     private Connection connection;
+
 
     @Override
     public void addPlane(Plane plane) throws Exception {
@@ -41,15 +44,19 @@ public class DBStorage implements Storage {
         return null;
     }
 
-    private void connect(String login, String password) throws DatabaseException {
+    private void connect() throws DatabaseException {
         try {
-            Class.forName(this.className);
-            this.connection = DriverManager.getConnection(this.url, login, password);
+            Class.forName(ConfiqUtils.getProporties("className"));
+            this.connection = DriverManager.getConnection(ConfiqUtils.getProporties("url")
+                    ,ConfiqUtils.getProporties("login"),ConfiqUtils.getProporties("password"));
         } catch (ClassNotFoundException cnfe) {
-            throw new DatabaseException("No driver for PostgreSQL found");
+            throw new DatabaseException("No driver for MySQL found");
         } catch (SQLException sqle) {
-            throw new DatabaseException("Unable to connect to PostgreSQL with the given login and password");
+            throw new DatabaseException("Unable to connect to MySQL with the given login and password");
         }
     }
 
+    public DBStorage() throws DatabaseException {
+        connect();
+    }
 }

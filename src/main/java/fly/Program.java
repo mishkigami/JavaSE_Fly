@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Program {
     public static void main (String [] args) throws Exception {
-        Storage storage = new CSVStorage();
+        Storage storage = new DBStorage();
 
         storage.addPlane(new Plane(1,"TY134",13));
         storage.addAirport(new Airports(2,"Pulkovo"));
