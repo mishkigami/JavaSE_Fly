@@ -20,6 +20,13 @@ public class Fly {
         Time_Arrival = time_Arrival;
     }
 
+    public Fly(int IDAirport_Departure, int IDAirport_Arrival, int IDPlane, LocalDateTime time_Departure, LocalDateTime time_Arrival) {
+        this.IDAirport_Departure = IDAirport_Departure;
+        this.IDAirport_Arrival = IDAirport_Arrival;
+        this.IDPlane = IDPlane;
+        Time_Departure = time_Departure;
+        Time_Arrival = time_Arrival;
+    }
     public Fly() {
 
     }
@@ -71,4 +78,6 @@ public class Fly {
     public void setTime_Arrival(LocalDateTime time_Arrival) {
         Time_Arrival = time_Arrival;
     }
+
+
 }

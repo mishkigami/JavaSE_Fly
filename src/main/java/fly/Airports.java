@@ -9,6 +9,9 @@ public class Airports {
         this.IDairports = IDairports;
         this.nameAirports = nameAirports;
     }
+    public Airports(String nameAirports){
+        this.nameAirports = nameAirports;
+    }
 
     public Airports() {
 
@@ -28,5 +31,13 @@ public class Airports {
 
     public void setNameAirports(String nameAirports) {
         this.nameAirports = nameAirports;
+    }
+
+    @Override
+    public String toString() {
+        return "Airports{" +
+                "IDairports=" + IDairports +
+                ", nameAirports='" + nameAirports + '\'' +
+                '}';
     }
 }
